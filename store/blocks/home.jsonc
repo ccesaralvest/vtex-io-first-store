@@ -3,8 +3,10 @@
     "blocks": [
       "rich-text", 
       "info-card#button-right",
-    
-      "slider-layout#home"
+      "info-card#button-left",
+      "slider-layout#home",
+      "flex-layout.row",
+      "info-card#rethink"
     ]
   },
   "flex-layout.row": {
