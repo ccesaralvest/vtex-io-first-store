@@ -1,6 +1,7 @@
 {
   "store.home": { 
     "blocks": [
+      "tab-layout#home",
       "rich-text", 
       "info-card#button-right",
       "info-card#button-left",
@@ -12,13 +13,78 @@
     ]
   },
 
+  // definindo o que o componente de bloco vai retornar
+  // nesse caso, retorna componentes filhos do componente tab-layout -> tab-list e tab-content
+  "tab-layout#home": {
+    "children": [
+      "tab-list#home",
+      "tab-content#home"
+    ]
+  },
+  // lista de itens que seram os botões de mudar de aba
+  "tab-list#home": {
+    "children": [
+      "tab-list.item#home1",
+      "tab-list.item#home2"
+    ]
+  },
+  //os botões em SI e suas propriedades => Texto e id
+  "tab-list.item#home1": {
+    "props": {
+      "tabId": "majorAppliances",
+      "label": "Major Appliances",
+      "defaultActiveTab": true
+    }
+  },
+  "tab-list.item#home2": {
+    "props": {
+      "tabId": "electronics",
+      "label": "Electronics"
+    }
+  },
+  // o conteudo que será retornado em uma DIV
+  "tab-content#home": {
+    "children": [
+      "tab-content.item#home1",
+      "tab-content.item#home2"
+    ]
+  },
+  "tab-content.item#home1": {
+    "children": [
+      "rich-text#home1"
+    ],
+    "props": {
+      "tabId": "majorAppliances"
+    }
+  },
+  "tab-content.item#home2": {
+    "children": [
+      "rich-text#home2"
+    ],
+    "props": {
+      "tabId": "electronics"
+    }
+  },
+  "rich-text#home1": {
+    "props": {
+      "text": "Área do conteúdo da tab-list.item com  tabId = majorAppliances",
+      "textPosition": "CENTER",
+      "font": "t-heading-3"
+    }
+  },
+  "rich-text#home2": {
+    "props": {
+      "text": "Área do conteúdo da tab-list.item com  tabId = electronics",
+      "textPosition": "CENTER",
+      "font": "t-heading-3"
+    }
+  },
   "responsive-layout.desktop#desktop": {
     "children": [
       "rich-text#desktop",
       "image#desktop"
     ]
   },
-
   "responsive-layout.mobile#mobile": {
     "children": [
       "rich-text#mobile",
@@ -27,6 +93,7 @@
   },
   "image#desktop": {
     "props": {
+      "maxWidth": "100%",
       "src": "https://appliancetheme.vteximg.com.br/arquivos/Responsive-Image-Desktop.jpg?q=1",
       "link": {
         "url": "/small-appliances/coffee-makers"
