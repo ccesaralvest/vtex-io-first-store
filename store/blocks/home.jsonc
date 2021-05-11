@@ -1,6 +1,7 @@
 {
   "store.home": { 
     "blocks": [
+      "modal-trigger#first",
       "tab-layout#home",
       "rich-text", 
       "info-card#button-right",
@@ -12,6 +13,32 @@
       "responsive-layout.mobile#mobile"
     ]
   },
+  
+  "modal-trigger#first":{
+    "children": [ 
+      "rich-text#trigger",
+      "modal-layout#first"
+     ]
+  },
+  "rich-text#trigger":{
+    "props": {
+      "text": "CLICK ME"
+    }
+  },
+
+  "modal-layout#first": {
+      "children": [
+        "rich-text#hello"
+      ]
+  },
+  "rich-text#hello": {
+    "props": {
+      "text": "Hello"
+    }
+  },
+  
+
+
 
   // definindo o que o componente de bloco vai retornar
   // nesse caso, retorna componentes filhos do componente tab-layout -> tab-list e tab-content
