@@ -1,6 +1,7 @@
 {
   "store.home": { 
     "blocks": [
+      "list-context.product-list",
       "modal-trigger#first",
       "tab-layout#home",
       "rich-text", 
@@ -11,6 +12,30 @@
       "info-card#rethink",
       "responsive-layout.desktop#desktop",
       "responsive-layout.mobile#mobile"
+    ]
+  },
+  //list-context serve para eu adicionar algum outro component.
+  "list-context.product-list": {
+    "blocks": ["product-summary.shelf"],
+    "children": ["slider-layout"]
+  },
+  "product-summary.shelf": {
+    "children": [
+      "modal-trigger#quickview",
+      "product-summary-name",
+      "product-selling-price"
+    ]
+  },
+  "modal-trigger#quickview": {
+    "children": ["product-summary-image", "modal-layout#quickview"]
+  },
+  "modal-layout#quickview": {
+    "children": [
+      "product-summary-name",
+      "product-images",
+      "product-summary-sku-selector",
+      "product-summary-quantity",
+      "add-to-cart-button"
     ]
   },
   
@@ -25,7 +50,6 @@
       "text": "CLICK ME"
     }
   },
-
   "modal-layout#first": {
       "children": [
         "rich-text#hello"
@@ -36,10 +60,6 @@
       "text": "Hello"
     }
   },
-  
-
-
-
   // definindo o que o componente de bloco vai retornar
   // nesse caso, retorna componentes filhos do componente tab-layout -> tab-list e tab-content
   "tab-layout#home": {
