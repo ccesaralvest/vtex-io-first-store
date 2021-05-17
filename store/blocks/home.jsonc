@@ -1,6 +1,7 @@
 {
 	"store.home": {
 		"blocks": [
+			"rich-text#home2",
 			"info-card#clearance",
 			"info-card#vintage",
 			"stack-layout#cta",

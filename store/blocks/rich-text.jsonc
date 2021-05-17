@@ -1,0 +1,10 @@
+{
+	"rich-text#home2": {
+		"props": {
+			"textAlignment": "CENTER",
+			"textPosition": "CENTER",
+			"text": "TEXTO EM ARQUIVO EXTERNO",
+			"font": "t-heading-1"
+		}
+	}
+}
